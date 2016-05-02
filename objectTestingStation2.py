@@ -13,7 +13,7 @@ class Idoru(object):
         self.radius = radius
         
 def checkRangeBetwixPoints(a,b):
-    return sqrt(fabs((a[0]-b[0])**2+(a[1]-b[1])**2))
+    return int(sqrt(fabs((a[0]-b[0])**2+(a[1]-b[1])**2)))
 
 FPS = 30 # frames per second, the general speed of the program
 WINDOWWIDTH = 640 # size of window's width in pixels
@@ -68,8 +68,10 @@ def main():
                 print("X: %i  Y: %i"%(mousex,mousey))
                 
                 for dot in dotList:
-                    if dot.radius <= checkRangeBetwixPoints(event.pos,dot.center):
+                    if dot.radius >= checkRangeBetwixPoints(event.pos,dot.center):
+                        print("event.pos" + str(event.pos) + ",  dot.center" + str(dot.center) + ",  RANGE:" + str(checkRangeBetwixPoints(event.pos,dot.center)) + ",  radius:" + str(dot.radius))
                         print("AND IT'S IN A GODDAMN DOTTTTT")
+                        dot.color = RED
                     
                 
         pygame.display.update()
