@@ -72,6 +72,8 @@ def main():
                         print("event.pos" + str(event.pos) + ",  dot.center" + str(dot.center) + ",  RANGE:" + str(checkRangeBetwixPoints(event.pos,dot.center)) + ",  radius:" + str(dot.radius))
                         print("AND IT'S IN A GODDAMN DOTTTTT")
                         dot.color = RED
+                    else:
+                        dotList.append(Idoru(WHITE,event.pos,10))
                     
                 
         pygame.display.update()
