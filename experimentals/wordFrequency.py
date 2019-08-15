@@ -18,7 +18,7 @@ highest = 0
 
 for x in fileLineList:
     counter +=1
-    ##This just removes the endline in the original text because we already are inserting an \n automatically with print
+    ##This just removes the endline in the original text because we already are inserting an \n automatically with print related problems
     ##The translate replaces all the punctuation. None having a capital N is very important, too.
     x = x.replace("\n","")
     x = x.replace("\"","")
